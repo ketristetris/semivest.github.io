@@ -9,4 +9,22 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 52px;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+.logoName{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+}
+.companyName{
+    font-size: 20px;
+}
+.accountVersion{
+    font-size: 14px;
 }
