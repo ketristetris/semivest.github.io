@@ -7,7 +7,7 @@
     align-items: center;
     box-sizing: border-box;
     border-radius: 12px;
-    background: var(--bg-primary, #FFF);
+    background: var(--bg-primary);
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.04), 0 2px 24px 0 rgba(0, 0, 0, 0.04);
 }
 
@@ -23,7 +23,7 @@
     flex-shrink: 0;
     border: 0cap;
     border-radius: 12px;
-    background: var(--Grey-75, #F6F6F6);
+    background: var(--primary-active);
 }
 .searchPlaceholder{
     border: 0cap;
@@ -36,7 +36,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    background-color: var(--Grey-75);
+    background-color: var(--primary-active);
 
       &:-webkit-autofill,
   &:-webkit-autofill:hover,
@@ -55,4 +55,77 @@
   &::-webkit-search-results-decoration {
     -webkit-appearance: none;
   }
+}
+
+.headerControls{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 52px;
+}
+
+.headerControlsButtons{
+  display: flex;
+  gap: 10px;
+}
+
+.headerButton{
+  width: 56px;
+  height: 56px;
+  background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid var(--border-primary);
+}
+.notificationCount{
+  width: 14px;
+  height: 14px;
+  font-family: var(--font-family-body, Montserrat);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px; /* 140% */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 7px;
+  top: 5.5px;
+  border-radius: 99px;
+  background: var(--bg-critical);
+}
+
+.miniProfile{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profilePhoto{
+  width: 56px;
+  height: 56px;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+}
+
+.profileName{
+  font-family: var(--font-family-body, Montserrat);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; 
+}
+
+.profileEmail{
+  font-family: var(--font-family-body, Montserrat);
+  color: var(--text-secondary, #5F5F5F);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
 }

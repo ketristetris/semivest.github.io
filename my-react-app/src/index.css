@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
- --Grey-800: #0A0A0A;
- --Grey-600: #5F5F5F;
- --Grey-200: #EDEDED;
- --Grey-100: rgba(255, 255, 255, 1);
-  --Grey-75: #F6F6F6;
+ --primary-inverse: #0A0A0A;   /* grey -  800*/
+ --secondary: #5F5F5F;   /* grey - 600 */
+ --secondary-active: #EDEDED;   /* grey - 200 */
+ --primary: #ffffff;   /* grey -  100 */
+ --primary-active: #F8F8F8;    /* grey - 75 */
+ --bg-primary: #ffffff;
+ --bg-secondary: #F6F6F6;
+ --bg-critical: #FF4747;
+ --text-secondary: #5F5F5F;
+ --text-primary: #0A0A0A;
+ --border-primary: #F0F0F0;
+ 
 };
 
 body{
@@ -29,6 +36,6 @@ body{
     flex: 1;
     box-sizing: border-box;
     border-radius: 16px;
-    border: 1px solid var(--Grey-200);
-    background: var(--Grey-75);
+    border: 1px solid var(--secondary-active);
+    background: var(--bg-secondary);
 }
