@@ -2,10 +2,12 @@ import "./modalCard.scss"
 import leaf from "../../../images/svg/leaf.svg"
 import progress from "../../../images/svg/progress.svg"
 import videoBlank from "../../../images/videoBlank.png"
+import progressBarEmpty from "../../../images/svg/progressBarBlank.svg"
 
 const ModalCard = () => {
-    const progressPercents = 20;
+    const progressPercents = 36;
     const currentModule = "Lesson 3 - Analyze Charts"
+    const progressBarPercent = 36/404;
     return(
         <div className="modalCard">
             <div className="thisModule">
@@ -37,11 +39,12 @@ const ModalCard = () => {
                             <div>Course progress</div>
                         </div>
                         <div className="coursesCount">
-                            3 of 25 lessons
+                            9 of 25 lessons
                         </div>
                     </div> 
                     <div className="progressBarGraph">
-                    
+                        <div className="progressBarAccent" ></div>
+                        <img src={progressBarEmpty} alt=""/>
                     </div>       
                 </div>
             </div>
