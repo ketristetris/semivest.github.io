@@ -7,12 +7,13 @@
  --primary: #ffffff;   /* grey -  100 */
  --primary-active: #F8F8F8;    /* grey - 75 */
  --bg-primary: #ffffff;
+ --bg-primary-inverse: #0A0A0A;
  --bg-secondary: #F6F6F6;
  --bg-critical: #FF4747;
  --text-secondary: #5F5F5F;
  --text-primary: #0A0A0A;
  --border-primary: #F0F0F0;
- 
+ --font-family-body: Montserrat;
 };
 
 body{

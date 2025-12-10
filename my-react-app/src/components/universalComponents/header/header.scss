@@ -1,6 +1,7 @@
 .header{
     display: flex;
     padding: 20px 24px;
+    margin-bottom: 44px;
     width: 100%;
     height: 96px;
     justify-content: space-between;
@@ -83,7 +84,6 @@
 .notificationCount{
   width: 14px;
   height: 14px;
-  font-family: var(--font-family-body, Montserrat);
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
@@ -113,7 +113,6 @@
 }
 
 .profileName{
-  font-family: var(--font-family-body, Montserrat);
   color: var(--text-primary);
   font-size: 14px;
   font-style: normal;
@@ -122,7 +121,6 @@
 }
 
 .profileEmail{
-  font-family: var(--font-family-body, Montserrat);
   color: var(--text-secondary, #5F5F5F);
   font-size: 12px;
   font-style: normal;
