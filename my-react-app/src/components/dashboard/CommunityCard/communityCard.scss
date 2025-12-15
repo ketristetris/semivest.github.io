@@ -1,0 +1,62 @@
+$card-border-radius: 12px;
+$card-padding: 24px;
+$heading-gap: 8px;
+$heading-margin-bottom: 4px;
+$heading-font-size: 20px;
+$text-font-size: 12px;
+$profiles-grid-gap: 1rem;
+$star-icon-top: 50%;
+$star-icon-left: 50%;
+
+.communityCard{
+    background-color: white;
+    border-radius: $card-border-radius;
+    padding: $card-padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.04), 0 2px 24px 0 rgba(0, 0, 0, 0.04);
+}
+
+.communityHeading{
+    display: flex;
+    align-items: center;
+    gap: $heading-gap;
+    margin-bottom: $heading-margin-bottom;
+    font-family: var(--font-family-title, Montserrat);
+    font-size: $heading-font-size;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -1px;
+}
+
+.communityText{
+    color: var(--text-secondary);
+    font-family: var(--font-family-body, Montserrat);
+    font-size: $text-font-size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.communityProfiles{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $profiles-grid-gap;
+    width: fit-content;
+
+    .starIcon{
+        position: absolute;
+        top: $star-icon-top;
+        left: $star-icon-left;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.communityProfilesContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

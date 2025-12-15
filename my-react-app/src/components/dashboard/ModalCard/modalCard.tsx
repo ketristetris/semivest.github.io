@@ -10,7 +10,7 @@ const ModalCard = () => {
     const currentLesson = 3;
     const lessonNumber = 25;
     const progressPercents = Math.round((currentLesson / lessonNumber) * 100);
-    const currentModule = "Lesson 3 - Analyze Charts";
+    const currentModule = "Lesson 3 — Analyze Charts";
     return (
         <div className="modalCard">
             <div className="thisModule">

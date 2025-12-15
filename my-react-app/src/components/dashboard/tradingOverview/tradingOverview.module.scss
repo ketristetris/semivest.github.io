@@ -1,0 +1,178 @@
+.tradingOverview {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 39px;
+    border-radius: 12px;
+    background: var(--bg-primary, #fff);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.04), 0 2px 24px 0 rgba(0, 0, 0, 0.04);
+    .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 37px;
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            .cardHeading {
+                color: var(--text-primary);
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: -1px;
+            }
+            .cardDiscription {
+                color: var(--text-secondary);
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 16px;
+            }
+        }
+        .watchlist {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            .watchlistHeader {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 8px 0 14px;
+                .HeadingTxt {
+                    display: flex;
+                    gap: 12px;
+                    align-items: center;
+
+                    font-family: var(--font-family-body, Montserrat);
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 22px;
+                }
+            }
+            .watchlistItems {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .watchlistItem {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 10px;
+                    .stockIcon {
+                        background-color: rgba(12, 12, 12, 1);
+                        min-width: 28px;
+                        min-height: 28px;
+                        box-sizing: border-box;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 14px;
+                    }
+                    .stockInfo {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 10px;
+                        font-style: normal;
+                        line-height: 14px;
+                        .strong {
+                            font-weight: 500;
+                        }
+                        .span {
+                            font-weight: 400;
+                            color: var(--text-secondary);
+                        }
+                    }
+                    &:hover {
+                        border-radius: 12px;
+                        border: 1px solid var(--border-primary-hover);
+                        background: var(--bg-primary-hover);
+                    }
+                }
+            }
+        }
+    }
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: end;
+        .calendar {
+            flex: 1;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            .nav {
+                color: var(--bg-primary-inverse);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                button {
+                    background: none;
+                    border: none;
+                }
+
+                .actualDate {
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 22px;
+                }
+            }
+
+            .daysHeader {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                row-gap: 2.33px;
+                margin-bottom: 16px;
+                .dayLabel {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 10px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 14px;
+                }
+            }
+
+            .daysGrid {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                grid-row-gap: 10px;
+                margin-bottom: 16px;
+
+                .day {
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 99px;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 16px;
+                    &:hover {
+                        background: var(--bg-secondary-hover);
+                    }
+
+                    &.outside {
+                        color: var(--text-disable);
+                    }
+
+                    &.today {
+                        background: var(--bg-accent);
+                        color: var(--text-primary-inverse);
+                    }
+                }
+            }
+        }
+    }
+}
