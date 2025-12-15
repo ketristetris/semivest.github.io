@@ -6,7 +6,6 @@ import {
     endOfMonth,
     format,
     startOfWeek,
-    endOfWeek,
 } from "date-fns";
 import styles from "./TradingOverview.module.scss";
 
@@ -18,6 +17,9 @@ import carpetLeft from "../../../images/svg/Carpet_left.svg";
 import carpetRight from "../../../images/svg/Carpet_right.svg";
 
 import dots from "../../../images/svg/dots.svg";
+import Button from "../../universalComponents/button/button";
+
+import stockIcon from "../../../images/stock/blank.svg"
 
 const TradingOverview = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -45,17 +47,15 @@ const TradingOverview = () => {
         <div className={styles.tradingOverview}>
             <div className={styles.left}>
                 <div className={styles.header}>
-                    <div>
-                        <h2>Trading Overview</h2>
-                        <p>
-                            Track your trades, strategies, and key market
-                            signals for the day
-                        </p>
+                    <div className={styles.cardHeading}>Trading Overview</div>
+                    <div className={styles.cardDiscription}>
+                        Track your trades, strategies, and key market <br />
+                        signals for the day
                     </div>
                 </div>
                 <div className={styles.watchlist}>
                     <div className={styles.watchlistHeader}>
-                        <div className={styles.watchlistHeading}>
+                        <div className={styles.HeadingTxt}>
                             <img src={tradeUp} alt="" /> Watchlist
                         </div>
                         <button className={styles.infoBtn}>
@@ -66,7 +66,7 @@ const TradingOverview = () => {
                     <div className={styles.watchlistItems}>
                         {watchlistItems.map((item) => (
                             <div key={item.id} className={styles.watchlistItem}>
-                                <div className={styles.stockIcon}>🔘</div>
+                                <div className={styles.stockIcon}><img src={stockIcon} alt=""/></div>
                                 <div className={styles.stockInfo}>
                                     <div className={styles.strong}>
                                         {item.symbol}
@@ -81,11 +81,15 @@ const TradingOverview = () => {
                             </div>
                         ))}
                     </div>
-
-                    <button className={styles.addStocksBtn}>
-                        Add Stocks <span>+</span>
-                    </button>
                 </div>
+                <Button
+                    type="Neutral"
+                    style="Secondary"
+                    size="medium"
+                    onClick={() => console.log("Go!")}
+                >
+                    Add Stocks
+                </Button>
             </div>
             <div className={styles.right}>
                 <button className={styles.exportBtn}>
@@ -97,7 +101,7 @@ const TradingOverview = () => {
                             <button onClick={prevMonth}>
                                 <img src={carpetLeft} alt="" />
                             </button>
-                            <span>{format(currentDate, "MMM d")}</span>
+                            <div className={styles.actualDate}>{format(currentDate, "MMM d")}</div>
                             <button onClick={nextMonth}>
                                 <img src={carpetRight} alt="" />
                             </button>

@@ -1,5 +1,4 @@
-$modal-width: 636px;
-$modal-height: 384px;
+$modal-width: 596px;
 $modal-padding: 24px;
 $modal-border-radius: 12px;
 $module-info-gap: 36px;
@@ -29,7 +28,7 @@ $courses-count-font-size: 12px;
 .modalCard {
     display: flex;
     width: $modal-width;
-    height: $modal-height;
+    height: auto;
     padding: $modal-padding;
     flex-direction: column;
     justify-content: space-between;
@@ -142,7 +141,7 @@ $courses-count-font-size: 12px;
     width: 100%;
     position: relative;
     img {
-        width: 100%;
+        max-width: 596px;
         height: $progress-bar-height;
         object-fit: cover;
         display: block;

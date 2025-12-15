@@ -130,6 +130,7 @@ $height-large: 60px;
   background-color: $neutral-secondary-default;
   color: $neutral-primary-default;
   font-weight: 500;
+  color: var(--text-secondary);
 
   &:hover:not(:disabled) {
     background-color: $neutral-secondary-hover;

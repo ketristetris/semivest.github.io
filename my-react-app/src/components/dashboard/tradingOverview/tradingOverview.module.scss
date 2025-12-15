@@ -1,280 +1,176 @@
-// TradingOverview.module.scss
-@use "sass:math";
-
 .tradingOverview {
-    background: #fff;
-    border-radius: 16px;
     padding: 24px;
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.04), 0 2px 24px 0 rgba(0, 0, 0, 0.04);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        sans-serif;
     display: flex;
+    justify-content: space-between;
     gap: 39px;
-
-    .exportBtn {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 18px;
-    }
-
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 35px;
-
-        h2 {
-            font-family: var(--font-family-title, Montserrat);
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 24px;
-            margin: 0%;
-        }
-
-        p {
-            font-family: var(--font-family-body, Montserrat);
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 16px;
-            margin: 4px 0 0 0;
-        }
-    }
-
-    .content {
-        display: flex;
-        gap: 24px;
-
-        @media (max-width: 768px) {
-            flex-direction: column;
-        }
-    }
-
-    .watchlist {
-        flex: 0 0 280px;
-
-        .watchlistHeader {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-
-            .watchlistHeading {
-                font-family: var(--font-family-body, Montserrat);
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: 22px;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                margin: 0;
-
-                svg {
-                    width: 16px;
-                    height: 16px;
-                    fill: currentColor;
-                }
-            }
-
-            .infoBtn {
-                background: none;
-                border: none;
-                cursor: pointer;
-                color: #999;
-                padding: 4px;
-                border-radius: 4px;
-
-                &:hover {
-                    color: #333;
-                }
-
-                svg {
-                    width: 16px;
-                    height: 16px;
-                    fill: currentColor;
-                }
-            }
-        }
-
-        .watchlistItems {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 24px;
-
-            .watchlistItem {
-                height: 28px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 10px;
-                padding: 10px;
-                background: #fafafa;
-                border-radius: 8px;
-                transition: background 0.2s;
-
-                &:hover {
-                    background: #f0f0f0;
-                }
-
-                .stockIcon {
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 50%;
-                    background: #000;
-                    color: white;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 12px;
-                }
-
-                .stockInfo {
-                    flex: 1;
-
-                    .strong {
-                        font-family: var(--font-family-body, Montserrat);
-                        font-size: 10px;
-                        font-style: normal;
-                        font-weight: 500;
-                        line-height: 14px;
-                    }
-
-                    .span {
-                        font-family: var(--font-family-body, Montserrat);
-                        font-size: 10px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 14px;
-                    }
-                }
-
-                .moreBtn {
-                  width: 12px;
-                  height: 12px;
-                    cursor: pointer;
-                    color: #999;
-                    &:hover {
-                        color: #333;
-                    }
-                }
-            }
-        }
-
-        .addStocksBtn {
-            width: 100%;
-            padding: 12px;
-            background: #f5f5f5;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #333;
-            cursor: pointer;
-            transition: background 0.2s;
-
-            &:hover {
-                background: #e0e0e0;
-            }
-
-            span {
-                margin-left: 8px;
-                font-weight: bold;
-            }
-        }
-    }
-
-    .calendar {
-        flex: 1;
-        background: #f5f5f5;
-        border-radius: 12px;
-        padding: 16px;
+    border-radius: 12px;
+    background: var(--bg-primary, #fff);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.04), 0 2px 24px 0 rgba(0, 0, 0, 0.04);
+    .left {
         display: flex;
         flex-direction: column;
-
-        .nav {
-            height: 22px;
+        justify-content: space-between;
+        gap: 37px;
+        .header {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            margin-bottom: 20px;
-
-            button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background: none;
-                border: none;
-                &:hover {
-                    opacity: 0.135;
-                }
-            }
-
-            span {
-                font-size: 16px;
-                font-weight: 500;
-                color: #333;
-            }
-        }
-
-        .daysHeader {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 1px;
-
-            .dayLabel {
-                width: 30px;
-                justify-content: center;
-                text-align: center;
-                font-family: var(--font-family-body, Montserrat);
-                font-size: 10px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 14px;
-                font-weight: 500;
-            }
-        }
-
-        .daysGrid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            grid-row-gap: 10px;
-            margin-top: 16px;
-
-            .day {
-                height: 32px;
-                width: 32px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                font-size: 14px;
-                cursor: pointer;
-                transition: all 0.2s;
+            flex-direction: column;
+            gap: 4px;
+            .cardHeading {
                 color: var(--text-primary);
-
-                font-family: var(--font-family-body, Montserrat);
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: -1px;
+            }
+            .cardDiscription {
+                color: var(--text-secondary);
                 font-size: 12px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 16px;
+            }
+        }
+        .watchlist {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            .watchlistHeader {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 8px 0 14px;
+                .HeadingTxt {
+                    display: flex;
+                    gap: 12px;
+                    align-items: center;
 
-                &:hover {
-                    background: #e0e0e0;
+                    font-family: var(--font-family-body, Montserrat);
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 22px;
+                }
+            }
+            .watchlistItems {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .watchlistItem {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 10px;
+                    .stockIcon {
+                        background-color: rgba(12, 12, 12, 1);
+                        min-width: 28px;
+                        min-height: 28px;
+                        box-sizing: border-box;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 14px;
+                    }
+                    .stockInfo {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 10px;
+                        font-style: normal;
+                        line-height: 14px;
+                        .strong {
+                            font-weight: 500;
+                        }
+                        .span {
+                            font-weight: 400;
+                            color: var(--text-secondary);
+                        }
+                    }
+                    &:hover {
+                        border-radius: 12px;
+                        border: 1px solid var(--border-primary-hover);
+                        background: var(--bg-primary-hover);
+                    }
+                }
+            }
+        }
+    }
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: end;
+        .calendar {
+            flex: 1;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            .nav {
+                color: var(--bg-primary-inverse);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                button {
+                    background: none;
+                    border: none;
                 }
 
-                &.outside {
-                    color: #ccc;
+                .actualDate {
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 22px;
                 }
+            }
 
-                &.today {
-                    background: #3b82f6;
-                    color: white;
-                    font-weight: 600;
+            .daysHeader {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                row-gap: 2.33px;
+                margin-bottom: 16px;
+                .dayLabel {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 10px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 14px;
+                }
+            }
+
+            .daysGrid {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                grid-row-gap: 10px;
+                margin-bottom: 16px;
+
+                .day {
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 99px;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 16px;
+                    &:hover {
+                        background: var(--bg-secondary-hover);
+                    }
+
+                    &.outside {
+                        color: var(--text-disable);
+                    }
+
+                    &.today {
+                        background: var(--bg-accent);
+                        color: var(--text-primary-inverse);
+                    }
                 }
             }
         }

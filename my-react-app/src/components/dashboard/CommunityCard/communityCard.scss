@@ -32,6 +32,7 @@ $star-icon-left: 50%;
 }
 
 .communityText{
+    color: var(--text-secondary);
     font-family: var(--font-family-body, Montserrat);
     font-size: $text-font-size;
     font-style: normal;

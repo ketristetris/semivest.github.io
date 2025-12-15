@@ -1,34 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
- --primary-inverse: #0A0A0A;
- --secondary: #5F5F5F;
- --secondary-active: #EDEDED;
- --primary: #ffffff;
- --primary-active: #F8F8F8;
- --bg-primary: #ffffff;
- --bg-primary-inverse: #0A0A0A;
- --bg-secondary: #F6F6F6;
- --bg-critical: #FF4747;
- --text-secondary: #5F5F5F;
- --text-primary: #0A0A0A;
- --border-primary: #F0F0F0;
- --icons-accent: #2683EB;
- --font-family-body: Montserrat;
-};
+    --primary-inverse: #0a0a0a;
+    --secondary: #5f5f5f;
+    --secondary-active: #ededed;
+    --primary: #ffffff;
+    --primary-active: #f8f8f8;
+    --bg-primary: #ffffff;
+    --bg-primary-inverse: #0a0a0a;
+    --bg-secondary: #f6f6f6;
+    --bg-critical: #ff4747;
+    --text-secondary: #5f5f5f;
+    --text-primary: #0a0a0a;
+    --border-primary: #f0f0f0;
+    --icons-accent: #2683eb;
+    --bg-secondary-hover: rgba(240, 240, 240, 1);
+    --font-family-body: Montserrat;
+    --text-disable: rgba(202, 202, 202, 1);
+    --bg-accent: #2683EB;
+    --text-primary-inverse: white;
+}
 
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: var(--font-family-body, Montserrat);
-    color: var(--text-primary, #0A0A0A);
+    color: var(--text-primary, #0a0a0a);
     background-color: var(--bg-primary, #ffffff);
 }
-.viewportContainer{
+.viewportContainer {
     display: flex;
     min-height: 100vh;
 }
-.container{
+.container {
     padding: 20px 20px 20px 0px;
     box-sizing: border-box;
     height: 100vh;
@@ -36,7 +40,7 @@ body{
     flex: 1;
 }
 
-.bigCard{
+.bigCard {
     padding: 20px;
     height: 100%;
     flex: 1;
@@ -47,17 +51,17 @@ body{
 }
 
 button {
-display: inline-block;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
-  font: inherit;
-  color: inherit;
-  text-align: inherit;
-  text-decoration: none;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
